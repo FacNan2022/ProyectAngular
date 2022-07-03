@@ -5,10 +5,34 @@
  */
 package com.PorfolioNancy.mgb.Service;
 
-/**
- *
- * @author pc
- */
+import com.PorfolioNancy.mgb.Entity.Experiencia;
+import com.PorfolioNancy.mgb.Entity.educacion;
+import com.PorfolioNancy.mgb.Repository.educacionRepo;
+import com.PorfolioNancy.mgb.Repository.experienciaRepo;
+import java.util.List;
+import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+@Transactional
 public class experienciaService {
-    
+      private final experienciaRepo experienciaRepo;
+    @Autowired
+     public experienciaService (experienciaRepo experienciaRepo){
+         this.experienciaRepo=experienciaRepo;
 }
+        public Experiencia addExperiencia(Experiencia Experiencia){
+             return experienciaRepo.save(Experiencia); 
+        
+     }
+         public List<Experiencia> buscarExperiencia(){
+             return experienciaRepo.findAll();
+         }
+         public Experiencia editarExperiencia (Experiencia Experiencia){
+             return experienciaRepo.save(Experiencia);
+         }
+         public void borrarEdicion(Long id){
+    experienciaRepo.deleteById(id);
+}
+     } 
