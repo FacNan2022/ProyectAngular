@@ -5,10 +5,32 @@
  */
 package com.PorfolioNancy.mgb.Service;
 
-/**
- *
- * @author pc
- */
+import com.PorfolioNancy.mgb.Entity.educacion;
+import com.PorfolioNancy.mgb.Repository.educacionRepo;
+import java.util.List;
+import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+@Transactional
 public class educacionService {
-    
+    private final educacionRepo educacionRepo;
+    @Autowired
+     public educacionService (educacionRepo educacionRepo){
+         this.educacionRepo=educacionRepo;
+          }
+         public educacion addEducacion (educacion educacion){
+             return educacionRepo.save(educacion); 
+        
+     }
+         public List<educacion> buscarEducaciones(){
+             return educacionRepo.findAll();
+         }
+         public educacion editaeEducacion (educacion educacion){
+             return educacionRepo.save(educacion);
+         }
+         public void borrarEdicion(Long id){
+    educacionRepo.deleteById(id);
 }
+     } 
