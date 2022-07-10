@@ -1,4 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { educacion } from '../Model/educacion';
+import { EducacionService } from '../srvicios/educacion.service';
 
 @Component({
   selector: 'app-educacion',
@@ -6,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
+public educacion: educacion[]=[];
 
-  constructor() { }
+  constructor(private educacionService: EducacionService) { }
 
   ngOnInit(): void {
+    this.getEducacion();
   }
+public getEducacion():void{
+  this.educacionService.getEducacion().subscribe({
+    next:(Response: educacion[])=>{
+    this.educacion=Response;
+  },
+  error: function (error: HttpErrorResponse) {
+    alert(error.message);
+  }
+  })
+}
 
 }

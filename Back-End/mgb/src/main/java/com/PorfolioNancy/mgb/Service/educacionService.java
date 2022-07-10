@@ -24,13 +24,13 @@ public class educacionService {
              return educacionRepo.save(educacion); 
         
      }
-         public List<educacion> buscarEducaciones(){
+         public List<educacion> buscarEducacion(){
              return educacionRepo.findAll();
          }
          public educacion editaeEducacion (educacion educacion){
              return educacionRepo.save(educacion);
          }
-         public void borrarEdicion(Long id){
+         public void borrarEducacion(Long id){
     educacionRepo.deleteById(id);
 }
      } 

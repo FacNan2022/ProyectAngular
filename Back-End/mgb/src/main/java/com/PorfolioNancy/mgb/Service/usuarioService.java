@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.PorfolioNancy.mgb.Service;
 
 import com.PorfolioNancy.mgb.Entity.usuario;
@@ -27,7 +23,7 @@ public usuario addUsuario (usuario usuario){
              return usuarioRepo.save(usuario);
         
      }
-         public List<usuario> buscarEducaciones(){
+         public List<usuario>buscarUsuario(){
              return usuarioRepo.findAll();
          }
          public usuario editarUsuario (usuario usuario){
