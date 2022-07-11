@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { usuario } from '../Model/usuario';
+import { HeaderService } from '../srvicios/header.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -7,12 +9,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
+public usuario: usuario | undefined;
+public editUsuario : usuario | undefined;
 
-  constructor(private router:Router) { }
+  constructor(private headerService: HeaderService) { }
 
   ngOnInit(): void {
+    this.getUser();
   }
-  login(){
-    this.router.navigate(['/login'])
-  }
+   public getUser():void{
+    this.headerService.getUser().subscribe({
+      next: (response: usuario)=>{
+        this.usuario=response;
+      },
+      error:(error: HttpErrorResponse)=>{
+        alert (error.message);
+      }
+  
+    })
+   }
+
 }

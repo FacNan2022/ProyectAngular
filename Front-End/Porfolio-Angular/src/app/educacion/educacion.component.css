@@ -1,0 +1,12 @@
+div#botones{
+    position:absolute;
+    right:1%;
+}
+button#nuevo{
+    position:absolute;
+    right:1%;
+    
+}
+div#seccionPrincipal{
+    display:flex;
+}

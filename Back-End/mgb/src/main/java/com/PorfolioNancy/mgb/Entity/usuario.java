@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 public class usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    private Long id;
     private String nombre;
     private String apellido;
     private String titulo;

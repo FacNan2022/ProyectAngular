@@ -9,9 +9,8 @@
         <img src="../assets/IMG_20210710_010534.jpg">
         <div class="btn-edit" id="foto-perfil"><a href="#" class="btn-right"><i class="fa fa-pen"></i></a></div>
     </div>
-    <div id="info-perfil">
-        <h1>Nancy Echeverria</h1>
+    <div id="info-perfil" *ngIf="usuario" >
+        <h1>{{usuario.nombre}}</h1>
         <button type="text">Añadir sección</button>
-    </div>
-   
+
 </div>

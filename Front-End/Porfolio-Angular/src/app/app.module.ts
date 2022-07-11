@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './encabezado/encabezado.component';
-import { AcercaDeComponent } from './acerca-de/acerca-de.component';
+import { AcercaDeComponent } from "./acerca-de/AcercaDeComponent";
 import { EducacionComponent } from './educacion/educacion.component';
 import { ExperienciaLaboralComponent } from './experiencia-laboral/experiencia-laboral.component';
 import { SkillHeadComponent } from './skill-head/skill-head.component';
@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 
 import { NavegadorComponent } from './navegador/navegador.component';
 import { RegistroComponent } from './registro/registro.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { RegistroComponent } from './registro/registro.component';
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
    
   ],
   providers: [],
