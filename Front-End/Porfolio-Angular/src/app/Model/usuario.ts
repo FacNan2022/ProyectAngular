@@ -1,5 +1,5 @@
 export interface usuario{
-id:number;
+id:Number;
 nombre:String;
 apellido: String;
 titulo: String;

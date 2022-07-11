@@ -1,6 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
 import { usuario } from '../Model/usuario';
 import { HeaderService } from '../srvicios/header.service';
 
@@ -11,7 +10,7 @@ import { HeaderService } from '../srvicios/header.service';
 })
 export class EncabezadoComponent implements OnInit {
 public usuario: usuario | undefined;
-public editarUsuario : usuario | undefined;
+public editUsuario : usuario | undefined;
 
   constructor(private headerService: HeaderService) { }
 
